@@ -4,7 +4,7 @@
 #'
 #' @param filepath 
 #'
-#' @return
+#' @return Read in clone summary with filepath as additional column
 #' @export
 #'
 #' @examples
@@ -14,7 +14,7 @@ clonesum_read <- function(inputpath){
   }else{
   clonesum = data.table::fread(inputpath)
   clonesum = janitor::clean_names(clonesum)
+  clonesum$filepath = inputpath
   return(clonesum)
   }
 }
-

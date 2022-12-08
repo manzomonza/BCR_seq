@@ -9,6 +9,9 @@ clonesum_read(inputpath)
 \arguments{
 \item{filepath}{}
 }
+\value{
+Read in clone summary with filepath as additional column
+}
 \description{
 Read  clone summary file
 }

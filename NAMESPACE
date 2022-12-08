@@ -2,4 +2,5 @@
 
 export(check_seq_panel)
 export(clonesum_read)
-export(clonesummary_indexing)
+export(clonesummary_index)
+export(clonesummary_panel)

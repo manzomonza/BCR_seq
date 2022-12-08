@@ -37,18 +37,42 @@ check_seq_panel <- function(file = clonesummary){
 #' @export
 #'
 #' @examples
-clonesummary_indexing <- function(charstring = check_seq_panel_output){
+clonesummary_panel <- function(charstring = check_seq_panel_output){
   if(charstring == "TCR_gamma"){
-    index = c("TCR", 1)
+    panel = "TCR"
   }else if(charstring == "TCR_beta"){
-    index = c("TCR", 2)
+    panel = "TCR"
   }
   else if(charstring == "BCR_H"){
-    index = c("BCR", 1)
+    panel = "BCR"
   }
   else if(charstring == "BCR_K_L"){
-    index = c("BCR", 2)
+    panel = "BCR"
+  }
+  return(panel)
+}
+
+#' Title
+#'
+#' @param charstring 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+\ <- function(charstring = check_seq_panel_output){
+  if(charstring == "TCR_gamma"){
+    index = 1
+  }else if(charstring == "TCR_beta"){
+    index = 2
+  }
+  else if(charstring == "BCR_H"){
+    index = 1
+  }
+  else if(charstring == "BCR_K_L"){
+    index = 2
   }
   return(index)
 }
+
 
