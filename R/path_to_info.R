@@ -9,7 +9,3 @@ path_to_info <- function(filepath){
   return(dfoi)
 }
 
-listme = lapply(testfiles, path_to_info)
-length(listme)
-
-dplyr::bind_rows(listme)
