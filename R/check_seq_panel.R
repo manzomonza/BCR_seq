@@ -60,7 +60,7 @@ clonesummary_panel <- function(charstring = check_seq_panel_output){
 #' @export
 #'
 #' @examples
-\ <- function(charstring = check_seq_panel_output){
+clonesummary_index <- function(charstring = check_seq_panel_output){
   if(charstring == "TCR_gamma"){
     index = 1
   }else if(charstring == "TCR_beta"){
