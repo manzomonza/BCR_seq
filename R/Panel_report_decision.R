@@ -4,16 +4,16 @@
 
 #' Extract info from clone summary and convert to dataframe
 #'
-#' @param listoffiles 
+#' @param filevector 
 #'
 #' @return
 #' @export
 #'
 #' @examples
-panel_dataframe <- function(listoffiles){
-  filecheck = lapply(listoffiles, path_to_info)
-  filecheck = dplyr::bind_rows(filecheck)
-  return(filecheck)
+panel_dataframe <- function(panel_df){
+  panel_df = lapply(filevector, path_to_info)
+  panel_df = dplyr::bind_rows(panel_df)
+  return(panel_df)
 }
 
 
@@ -31,6 +31,7 @@ check_panel_dataframe <- function(panel_df){
   }else if(nrow(panel_df) < 2){
     stop("insufficient clone summaries")
   }else{
+    # potentially error prone as for combo of 2 BCR and TCR whole function call would stop
     panel_group = dplyr::group_by(panel_df, panel)
     panel_group = dplyr::group_split(panel_group)
     return(list(lapply(panel_group, check_panel_dataframe)))
@@ -45,5 +46,23 @@ check_panel_dataframe <- function(panel_df){
   }
 }
 
-
+#' Returns string for panel based on panel dataframe.
+#' Will be used to trigger correct reporting in LymphoyteSeq_report render script.
+#'
+#' @param panel_df 
+#'
+#' @return string
+#' @export
+#'
+#' @examples
+panel_decision <- function(panel_df){
+  panel = unique(panel_df$panel)
+  if(panel == "TCR"){
+    return("TCR")
+  }else if(panel == "BCR"){
+    return("BCR")
+  }else{
+    stop("panel without reporting yet")
+  }
+}
 
