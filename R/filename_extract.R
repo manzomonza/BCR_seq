@@ -23,5 +23,3 @@ filename_extract <- function(filestr1, filestr2){
   }
   return(testme)
 }
-
-filename_extract(filestr1 = 'banana',filestr2 = 'ananas')
