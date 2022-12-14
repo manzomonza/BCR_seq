@@ -5,6 +5,4 @@ only_clonesummaries = function(filedir){
   return(filevector)
 }
 
-only_clonesummaries(dirname(testfiles[3]))
-
 

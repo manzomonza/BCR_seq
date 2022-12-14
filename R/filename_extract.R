@@ -21,6 +21,3 @@ filename_extract <- function(file1, file2){
   }
 }
 
-
-
-
