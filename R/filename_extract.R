@@ -2,10 +2,11 @@
 #'
 #' @param filevector 
 #'
-#' @return
+#' @return substring present in both filestrings
 #' @export
 #'
 #' @examples banana AND ananas -> anana
+#' will fail with more than two strings
 filename_extract <- function(filestr1, filestr2){
   filestr1 = basename(filestr1)
   filestr2 = basename(filestr2)
