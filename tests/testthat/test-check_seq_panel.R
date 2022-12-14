@@ -23,6 +23,3 @@ testthat::test_that(desc = "Correct assignment of panel",
                       )
                     }
 )
-
-paneledf = panel_dataframe(testfiles[1:3])
-lapply(paneledf, check_panel_dataframe)

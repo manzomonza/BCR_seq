@@ -4,7 +4,7 @@
 \alias{panel_dataframe}
 \title{Extract info from clone summary and convert to dataframe}
 \usage{
-panel_dataframe(panel_df)
+panel_dataframe(filevector)
 }
 \arguments{
 \item{filevector}{}
