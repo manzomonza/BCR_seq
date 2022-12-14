@@ -4,10 +4,10 @@
 \alias{panel_dataframe}
 \title{Extract info from clone summary and convert to dataframe}
 \usage{
-panel_dataframe(listoffiles)
+panel_dataframe(panel_df)
 }
 \arguments{
-\item{listoffiles}{}
+\item{filevector}{}
 }
 \description{
 Extract info from clone summary and convert to dataframe

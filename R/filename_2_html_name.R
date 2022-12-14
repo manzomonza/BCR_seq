@@ -6,4 +6,3 @@ filepath_to_html_name <- function(filename){
 }
 
 
-filename <- paste0(filename, date_string, "_Pan_TCR_report.html")

@@ -2,6 +2,17 @@
 
 # Aggregate file info
 
+# Filepath to dataframe
+
+path_to_info <- function(filepath){
+  clonsum = clonesum_read(filepath)
+  dfoi = data.frame(filepath = filepath)
+  dfoi$panel_char = check_seq_panel(clonsum)
+  dfoi$panel = clonesummary_panel(dfoi$panel_char)
+  dfoi$index = clonesummary_index(dfoi$panel_char)
+  return(dfoi)
+}
+
 #' Extract info from clone summary and convert to dataframe
 #'
 #' @param filevector 
@@ -10,7 +21,7 @@
 #' @export
 #'
 #' @examples
-panel_dataframe <- function(panel_df){
+panel_dataframe <- function(filevector){
   panel_df = lapply(filevector, path_to_info)
   panel_df = dplyr::bind_rows(panel_df)
   return(panel_df)
