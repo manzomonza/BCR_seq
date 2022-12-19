@@ -9,13 +9,11 @@
 #'
 #' @examples
 topClone = function(clonesum){
-  prod_freq = clonesum[which(clonesum$rank == 1)]$productive_frequency
-  prod_freq = as.numeric(prod_freq)
-  prod_freq = round(prod_freq*100,1)
-  stringoi = paste0("Largest clone frequency: ",prod_freq, "%" )
+  freq = clonesum[which(clonesum$rank == 1)]$frequency
+  freq = as.numeric(freq)
+  freq = round(freq*100, 1)
+  stringoi = paste0("Largest clone frequency: ", freq, "%" )
   return(stringoi)
 }
-
-
 
 
