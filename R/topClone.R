@@ -9,6 +9,8 @@
 #'
 #' @examples
 topClone = function(clonesum){
-  clonesum = clonesum[which(clonesum$rank == 1)]
+  prod_freq = clonesum[which(clonesum$rank == 1)]$productive_frequency
+  prod_freq = round(prod_freq,1)
+  stringoi = paste0("Largest clone frequency: ",prod_freq, "%" )
   return(clonesum)
 }

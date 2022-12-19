@@ -1,5 +1,14 @@
 # Top total counts
 
+#' Bring rank counts back
+#'
+#' @param clone_summary 
+#' @param rank 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 total_counts <- function(clone_summary, rank){
   require(magrittr)
   total_counts = clone_summary %>% 
@@ -9,5 +18,3 @@ total_counts <- function(clone_summary, rank){
   
   return(rank_counts)
 }
-
-total_counts(clonesum_read(testfiles[1]))

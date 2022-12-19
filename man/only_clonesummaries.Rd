@@ -9,6 +9,9 @@ only_clonesummaries(filedir)
 \arguments{
 \item{filedir}{}
 }
+\value{
+Return filevector of clone summaries actively excluding 'downsample' clonesummaries
+}
 \description{
 List only clonesummaries in directory
 }
