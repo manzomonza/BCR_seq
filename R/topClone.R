@@ -67,9 +67,9 @@ top25_lineage_selection <- function(lineage_file){
   return(selection)
 }
 
-#' Return top25 clones of lineage summaries formatted for presentation in Data Table
+#' Return top25 clones of clone summaries formatted for presentation in Data Table
 #'
-#' @param lineage_file
+#' @param clonesum
 #'
 #' @return
 #' @export
