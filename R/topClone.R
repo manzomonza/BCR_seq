@@ -63,6 +63,7 @@ topClone_analysis_lineage = function(lineage, i, j){
 top25_lineage_selection <- function(lineage_file){
   selection = head(lineage_file, n = 25) %>%
     dplyr::select(lineage_id, variable,top_cdr3aa,lineage_frequency,number_of_clones)
+  selection$lineage_frequency = round(selection$lineage_frequency, digits = 3)
   colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
   return(selection)
 }
@@ -78,6 +79,7 @@ top25_lineage_selection <- function(lineage_file){
 top25_clonesum_selection_bcr <- function(clonesum){
   selection = head(clonesum, n = 25) %>%
     dplyr::select(lineage_id, variable,joining,cdr3_aa,cdr3_nt,frequency)
+  selection$frequency = round(selection$frequency, digits = 3)
   colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
   return(selection)
 }
