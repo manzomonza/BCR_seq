@@ -28,9 +28,11 @@ topClone = function(clonesum){
 topClone_analysis_lineage = function(clonesum, i, j){
   freq_nom = as.numeric(clonesum[i,]$lineage_frequency)
   freq_denom = as.numeric(clonesum[j,]$lineage_frequency)
-  freq = freq_nom/freq_denom
-  freq = round(freq, digits = 2)
-  return(freq)
+  ratio = freq_nom/freq_denom
+  ratio = round(ratio, digits = 2)
+  return(list(nom = freq_nom,
+              denom = freq_denom,
+              ratio = ratio))
 }
 
 
