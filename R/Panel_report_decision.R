@@ -1,9 +1,13 @@
-# TCR/BCR report decision
-
-# Aggregate file info
-
-# Filepath to dataframe
-
+#' TCR/BCR report decision
+#' Aggregate file info
+#' From filepaths to dataframe
+#'
+#' @param filepath
+#'
+#' @return
+#' @export
+#'
+#' @examples
 path_to_info <- function(filepath){
   clonsum = clonesum_read(filepath)
   dfoi = data.frame(filepath = filepath)
@@ -15,7 +19,7 @@ path_to_info <- function(filepath){
 
 #' Extract info from clone summary and convert to dataframe
 #'
-#' @param filevector 
+#' @param filevector
 #'
 #' @return
 #' @export
@@ -31,7 +35,7 @@ panel_dataframe <- function(filevector){
 
 #' Check number of entries in panel dataframe, concordance in panel and discordance in indeces
 #'
-#' @param panel_df 
+#' @param panel_df
 #'
 #' @return
 #' @export
@@ -56,7 +60,7 @@ check_panel_dataframe <- function(panel_df){
 #' Returns string for panel based on panel dataframe.
 #' Will be used to trigger correct reporting in LymphoyteSeq_report render script.
 #'
-#' @param panel_df 
+#' @param panel_df
 #'
 #' @return string
 #' @export
