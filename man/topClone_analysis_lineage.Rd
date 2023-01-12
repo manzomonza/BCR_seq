@@ -4,7 +4,7 @@
 \alias{topClone_analysis_lineage}
 \title{Retrieve the division result of i and jth clone}
 \usage{
-topClone_analysis_lineage(clonesum, i, j)
+topClone_analysis_lineage(lineage, i, j)
 }
 \arguments{
 \item{clonesum}{}
