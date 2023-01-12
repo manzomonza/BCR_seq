@@ -52,7 +52,7 @@ clone_frequencies_lineage <- function(plot_prepped){
 #' @examples
 plot_prep <- function(summaryfile){
   sumfile = summaryfile |>
-    dplyr::mutate(top = if_else(rank == 1, TRUE, FALSE)) %>%
+    dplyr::mutate(top = ifelse(rank == 1, TRUE, FALSE)) %>%
     dplyr::mutate(log2_strand = log2(plus_counts/ minus_counts))
   return(sumfile)
 }
