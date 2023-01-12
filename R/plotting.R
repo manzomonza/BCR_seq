@@ -6,7 +6,7 @@ clone_frequencies_vs_rank <- function(){}
 strandbias <- function(){}
 
 plot_prep <- function(summaryfile){
-  sumfile = clonesum_read(summaryfile) |>
+  sumfile =  summaryfile |>
     dplyr::mutate(top = if_else(rank == 1, TRUE, FALSE)) %>%
     dplyr::mutate(log2_strand = log2(plus_counts/ minus_counts))
   return(sumfile)
