@@ -29,7 +29,7 @@ clone_frequencies_clonsum <- function(plot_prepped){
 #' @export
 #'
 #' @examples
-clone_frequencies_clonsum <- function(plot_prepped){
+clone_frequencies_lineage <- function(plot_prepped){
   gplot <- ggplot(plot_prepped, aes(x=functionality, y=lineage_frequency, color = top)) +
     geom_jitter(width=0.25, alpha=0.7, size=2.5) + ylim (0,0.50) +
     geom_hline(yintercept=0.1, linetype="dashed", color = "red", size=1) +
@@ -103,7 +103,7 @@ clone_frequencies_vs_rank_clonesum <- function(plot_prepped){
 #'
 #' @examples
 clone_frequencies_vs_rank_lineage <- function(plot_prepped){
-  gplot<-ggplot(plot_prepped, aes(x=rank, y=frequency, color = top)) +
+  gplot<-ggplot(plot_prepped, aes(x=rank, y=lineage_frequency, color = top)) +
     geom_point() +
     scale_x_log10() +
     geom_hline(yintercept=0.01, linetype="dashed", size=1, color = "blue") +
