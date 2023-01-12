@@ -1,6 +1,6 @@
 #' Determine if largest clone frequency is above background
 #'
-#' @param clonsum 
+#' @param clonsum
 #'
 #' @return
 #' @export
@@ -14,7 +14,7 @@ overbackground_tcr <- function(clonesum){
 
 #' Determine if largest clone frequency is above background
 #'
-#' @param clonesum 
+#' @param clonesum
 #'
 #' @return
 #' @export
@@ -25,9 +25,3 @@ overbackground_bcr <- function(clonesum){
   bkgrnd = clonesum[which(clonesum$rank == 3),]$frequency
   return(freq/bkgrnd)
 }
-
-
-
-fast = lapply(testfiles, clonesum_read)
-sapply(fast, overbackground_bcr)
-
