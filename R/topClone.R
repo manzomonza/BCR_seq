@@ -34,7 +34,6 @@ topClone_analysis_clonesum = function(clonesum, i, j){
 }
 
 
-
 #' Retrieve the division result of i and jth clone
 #'
 #' @param clonesum
