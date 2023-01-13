@@ -68,7 +68,7 @@ top25_lineage_selection <- function(lineage_file){
   return(selection)
 }
 
-' Return top25 clones of lineage summaries formatted for presentation in Data Table
+#' Return top25 clones of TCR cloneummaries formatted for presentation in Data Table
 #'
 #' @param lineage_file
 #'
@@ -76,8 +76,8 @@ top25_lineage_selection <- function(lineage_file){
 #' @export
 #'
 #' @examples
-top25_lineage_selection_tcr <- function(lineage_file){
-  selection = head(lineage_file, n = 25) %>%
+top25_lineage_selection_tcr <- function(clonesum){
+  selection = head(clonesum, n = 25) %>%
     dplyr::select(variable, joining, cdr3_aa, frequency, total_counts)
   selection$frequency = round(selection$frequency, digits = 3)
   colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
