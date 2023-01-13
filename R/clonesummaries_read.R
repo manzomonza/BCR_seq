@@ -13,5 +13,4 @@ clonesum_read <- function(inputpath){
   clonesum = janitor::clean_names(clonesum)
   clonesum$filepath = inputpath
   return(clonesum)
-  }
 }
