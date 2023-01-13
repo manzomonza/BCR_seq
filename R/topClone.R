@@ -68,6 +68,24 @@ top25_lineage_selection <- function(lineage_file){
   return(selection)
 }
 
+' Return top25 clones of lineage summaries formatted for presentation in Data Table
+#'
+#' @param lineage_file
+#'
+#' @return
+#' @export
+#'
+#' @examples
+top25_lineage_selection_tcr <- function(lineage_file){
+  selection = head(lineage_file, n = 25) %>%
+    dplyr::select(variable, joining, cdr3_aa, frequency, total_counts)
+  selection$frequency = round(selection$frequency, digits = 3)
+  colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
+  return(selection)
+}
+
+
+
 #' Return top25 clones of clone summaries formatted for presentation in Data Table
 #'
 #' @param clonesum
@@ -78,7 +96,7 @@ top25_lineage_selection <- function(lineage_file){
 #' @examples
 top25_clonesum_selection_bcr <- function(clonesum){
   selection = head(clonesum, n = 25) %>%
-    dplyr::select(lineage_id, variable,joining,cdr3_aa,cdr3_nt,frequency)
+    dplyr::select(lineage_id, variable,joining,cdr3_aa,cdr3_nt,frequency, total_counts)
   selection$frequency = round(selection$frequency, digits = 3)
   colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
   return(selection)
