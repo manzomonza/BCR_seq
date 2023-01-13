@@ -84,8 +84,6 @@ top25_clonesum_selection_tcr <- function(clonesum){
   return(selection)
 }
 
-
-
 #' Return top25 clones of clone summaries formatted for presentation in Data Table
 #'
 #' @param clonesum
