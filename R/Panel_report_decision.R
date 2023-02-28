@@ -28,7 +28,7 @@ path_to_info <- function(filepath){
 panel_dataframe <- function(filevector){
   panel_df = lapply(filevector, path_to_info)
   panel_df = dplyr::bind_rows(panel_df)
-  panel_df = dplyr::group_by(panel_df,panel)
+  panel_df = dplyr::group_by(panel_df, panel)
   panel_df = dplyr::group_split(panel_df)
   return(panel_df)
 }

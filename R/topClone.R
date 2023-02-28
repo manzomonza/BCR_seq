@@ -78,7 +78,7 @@ top25_lineage_selection <- function(lineage_file){
 #' @examples
 top25_clonesum_selection_tcr <- function(clonesum){
   selection = head(clonesum, n = 25) %>%
-    dplyr::select(variable, joining, cdr3_aa, frequency, total_counts)
+    dplyr::select(variable, joining, cdr3_aa, cdr3_nt, frequency, total_counts)
   selection$frequency = round(selection$frequency, digits = 3)
   colnames(selection) = gsub("_", " ",stringr::str_to_title(colnames(selection)))
   return(selection)
