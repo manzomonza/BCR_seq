@@ -8,9 +8,11 @@
 #' @examples
 clone_i_freq = function(clonesum,i){
   freq = clonesum[i,]$frequency
+  freq = round(freq, digits = 4)
+  freq = freq * 100
+  freq = paste0(freq,"%")
   return(freq)
 }
-
 
 #' Calculate Top clone enrichment of jth clone
 #'
@@ -25,7 +27,9 @@ top_ratio_to_x = function(clonesum, j){
   i = 1
   i_f = clonesum[i,]$frequency
   j_f = clonesum[j,]$frequency
-  return(i_f/j_f)
+  ratio = i_f/j_f
+  ratio = round(i_f/j_f, digits = 4)
+  return(ratio)
 }
 
 
