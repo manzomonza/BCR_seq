@@ -28,7 +28,7 @@ top_ratio_to_x = function(clonesum, j){
   i_f = clonesum[i,]$frequency
   j_f = clonesum[j,]$frequency
   ratio = i_f/j_f
-  ratio = round(i_f/j_f, digits = 4)
+  ratio = round(i_f/j_f, digits = 2)
   return(ratio)
 }
 
